@@ -2,6 +2,7 @@ package v1
 
 import (
 	"errors"
+	"fmt"
 	"strings"
 )
 
@@ -34,4 +35,11 @@ func (l *ListaDeCompras) RemoverItem(nome string) {
 			break
 		}
 	}
+}
+
+func (l *ListaDeCompras) Display() {
+	for _, item := range l.Itens {
+		fmt.Printf("Nome:%s Quantidade:%d\n", item.Nome, item.Quantidade)
+	}
+
 }
